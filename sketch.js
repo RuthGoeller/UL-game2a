@@ -30,95 +30,141 @@ Each state is worth two marks:
 WARNING: Do not get too carried away. Around 10-20 lines of code should work for each state of your game character.
 
 */
-
 var gameChar_x = 0;
 var gameChar_y = 0;
 
-function setup()
-{
-	createCanvas(400, 600);
+function setup() {
+  createCanvas(400, 600);
 }
 
-function draw()
-{
-	background(255);
+function draw() {
+  background(255);
 
-	//Standing, facing frontwards
+  // Standing, facing frontwards
+  stroke(100);
+  noFill();
+  rect(20, 60, 50, 80);
+  noStroke();
+  fill(0);
+  text("1. standing front facing", 20, 160);
 
-	stroke(100);
-	noFill();
-	rect(20, 60, 50, 80);
-	noStroke();
-	fill(0);
-	text("1. standing front facing", 20, 160);
+  gameChar_x = 48;
+  gameChar_y = 110;
+  //Add your code here ...
+  fill(255, 0, 0);
+  rect(gameChar_x - 10, gameChar_y - 20, 15, 40);
+  fill(0);
+  rect(gameChar_x - 10, gameChar_y + 20, 15, 10);
 
-	gameChar_x = 45;
-	gameChar_y = 137;
-	//Add your code here ...
+  // Jumping facing forwards
+  stroke(100);
+  noFill();
+  rect(220, 60, 50, 80);
+  noStroke();
+  fill(0);
+  text("2. jumping facing forwards", 220, 160);
 
+  gameChar_x = 248;
+  gameChar_y = 130;
+  //Add your code here ...
+  fill(255, 0, 0);
+  rect(gameChar_x - 10, gameChar_y - 40, 15, 40);
+  fill(0);
+  rect(gameChar_x - 15, gameChar_y, 25, 10);
 
-	//Jumping facing forwards
-	stroke(100);
-	noFill();
-	rect(220, 60, 50, 80);
-	noStroke();
-	fill(0);
-	text("2. jumping facing forwards", 220, 160);
+  // Walking, turned left
+  stroke(100);
+  noFill();
+  rect(20, 260, 50, 80);
+  noStroke();
+  fill(0);
+  text("3. Walking left", 20, 360);
 
-	gameChar_x = 245;
-	gameChar_y = 137;
-	//Add your code here ...
+  gameChar_x = 48;
+  gameChar_y = 310;
+  //Add your code here ...
+  fill(255, 0, 0);
+  rect(gameChar_x - 10, gameChar_y - 20, 15, 40);
+  fill(0);
+  rect(gameChar_x - 10, gameChar_y + 20, 15, 10);
+  triangle(
+    gameChar_x - 10,
+    gameChar_y - 10,
+    gameChar_x - 10,
+    gameChar_y + 10,
+    gameChar_x - 23,
+    gameChar_y
+  );
 
+  // Walking, turned right
+  stroke(100);
+  noFill();
+  rect(220, 260, 50, 80);
+  noStroke();
+  fill(0);
+  text("4. Walking right", 220, 360);
 
-	//Walking, turned left
-	stroke(100);
-	noFill();
-	rect(20, 260, 50, 80);
-	noStroke();
-	fill(0);
-	text("3. Walking left", 20, 360);
+  gameChar_x = 245;
+  gameChar_y = 310;
+  //Add your code here ...
+  fill(255, 0, 0);
+  rect(gameChar_x - 5, gameChar_y - 20, 15, 40);
+  fill(0);
+  rect(gameChar_x - 5, gameChar_y + 20, 15, 10);
+  triangle(
+    gameChar_x + 10,
+    gameChar_y - 10,
+    gameChar_x + 10,
+    gameChar_y + 10,
+    gameChar_x + 23,
+    gameChar_y
+  );
 
-	gameChar_x = 45;
-	gameChar_y = 337;
-	//Add your code here ...
+  // Jumping right
+  stroke(100);
+  noFill();
+  rect(20, 460, 50, 80);
+  noStroke();
+  fill(0);
+  text("5. Jumping to the right", 20, 560);
 
+  gameChar_x = 45;
+  gameChar_y = 530;
+  //Add your code here ...
+  fill(255, 0, 0);
+  rect(gameChar_x - 10, gameChar_y - 40, 20, 40);
+  fill(0);
+  rect(gameChar_x - 15, gameChar_y, 30, 10);
+  triangle(
+    gameChar_x - 20,
+    gameChar_y - 40,
+    gameChar_x + 20,
+    gameChar_y - 40,
+    gameChar_x,
+    gameChar_y - 60
+  );
 
-	//Walking, turned right
-	stroke(100);
-	noFill();
-	rect(220, 260, 50, 80);
-	noStroke();
-	fill(0);
-	text("4. Walking right", 220, 360);
+  // Jumping to the left
+  stroke(100);
+  noFill();
+  rect(220, 460, 50, 80);
+  noStroke();
+  fill(0);
+  text("6. Jumping to the left", 220, 560);
 
-	gameChar_x = 245;
-	gameChar_y = 337;
-	//Add your code here ...
-
-
-	//Jumping right
-	stroke(100);
-	noFill();
-	rect(20, 460, 50, 80);
-	noStroke();
-	fill(0);
-	text("5. Jumping to the right", 20, 560);
-
-	gameChar_x = 45;
-	gameChar_y = 537;
-	//Add your code here ...
-
-
-	//Jumping to the left
-	stroke(100);
-	noFill();
-	rect(220, 460, 50, 80);
-	noStroke();
-	fill(0);
-	text("6. Jumping to the left", 220, 560);
-
-	gameChar_x = 245;
-	gameChar_y = 537;
-	//Add your code here ...
-
+  gameChar_x = 245;
+  gameChar_y = 530;
+  //Add your code here ...
+  fill(255, 0, 0);
+  rect(gameChar_x - 10, gameChar_y - 40, 20, 40);
+  fill(0);
+  rect(gameChar_x - 15, gameChar_y, 30, 10);
+  triangle(
+    gameChar_x - 20,
+    gameChar_y - 40,
+    gameChar_x + 20,
+    gameChar_y - 40,
+    gameChar_x,
+    gameChar_y - 60
+  );
 }
